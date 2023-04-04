@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "recursion.h"
 
 extern void full_sort(int* array, int start, int end);
 
@@ -27,10 +28,6 @@ extern int int_divorce(int n, int m);
 extern void half_search(int* array, int val, int start, int end);
 
 extern void half_search_nr(int* array, int val, int start, int end);
-
-extern void chessboard(int length, int row, int column);
-
-extern void chessboard_r(int ro, int co, int length, int row, int column);
 
 extern void matrix_multi_main(int n);
 
@@ -61,13 +58,13 @@ int main() {
 	//half_search(a, 3, 0, 7);
 	//half_search_nr(a, 3, 0, 7);
 	//printf("%d divorce = %d\n", 6, int_divorce(50, 50));
-	//chessboard(16, 5, 14);
+	chessboard(matrix, 4, 0, 1);
 	//matrix_multi_main(4);
-	quick_sort(b, 0, 2);
-	quick_sort(a, 0, 10);
+	//quick_sort(b, 0, 2);
+	//quick_sort(a, 0, 10);
 	//printf("minest distance = %d", one_dimension_nearst_distance(a, 0, 10));
-	for(int i = 0; i < sizeof(a)/sizeof(a[0]); i++)
-	    printf("%d ", a[i]);
+	//for(int i = 0; i < sizeof(a)/sizeof(a[0]); i++)
+	//    printf("%d ", a[i]);
 	//find_array_min(a, 11);
 	//find_array_min_max(a, 11);
 	//randomized_select(a, 4, 0, 10);
@@ -269,50 +266,6 @@ void half_search_nr(int* array, int val, int start, int end) {
 	}
 }
 
-void chessboard(int length, int row, int column) {
-	//matrix[row][column] = 0;
-	chessboard_r(0, 0, length, row, column);
-	for (int i = 0; i < length; i++) {
-		for (int j = 0; j < length; j++) {
-			printf("%3d ", matrix[i][j]);
-		}
-		printf("\n");
-	}
-}
-
-void chessboard_r(int ro, int co, int length, int row, int column) {
-	int s = length / 2;
-	if (length == 1) return;
-	int t = ++order;
-	if (row < ro + s && column < co + s) {
-		chessboard_r(ro, co, s, row, column);
-	}
-	else {
-		matrix[ro + s - 1][co + s - 1] = t;
-		chessboard_r(ro, co, s, ro + s - 1, co + s - 1);
-	}
-	if (row < ro + s && column >= co + s) {
-		chessboard_r(ro, co + s, s, row, column);
-	}
-	else {
-		matrix[ro + s - 1][co + s] = t;
-		chessboard_r(ro, co + s, s, ro + s - 1, co + s);
-	}
-	if (row >= ro + s && column < co + s) {
-		chessboard_r(ro + s, co, s, row, column);
-	}
-	else {
-		matrix[ro + s][co + s - 1] = t;
-		chessboard_r(ro + s, co, s, ro + s, co + s - 1);
-	}
-	if (row >= ro + s && column >= co + s) {
-		chessboard_r(ro + s, co + s, s, row, column);
-	}
-	else {
-		matrix[ro + s][co + s] = t;
-		chessboard_r(ro + s, co + s, s, ro + s, co + s);
-	}
-}
 
 void matrix_multi_main(int n) {
 
