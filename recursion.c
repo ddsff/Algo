@@ -371,7 +371,7 @@ void insert_sort(int *array, int length) {
     for (int j = 1; j < length; j++) {
         i = j - 1;
         key = array[j];
-        while (i >= 0 && array[i] < key) {
+        while (i >= 0 &&  key < array[i]) {
             array[i + 1] = array[i];
             i--;
         }

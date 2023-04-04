@@ -4,7 +4,7 @@
 
 #ifndef CLION_MY_LIB_H
 #define CLION_MY_LIB_H
-
+#include <stdio.h>
 extern void swap(int *array, int i, int j);
 
 extern void printf_array(int* array, int n);
