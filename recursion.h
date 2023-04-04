@@ -34,6 +34,25 @@ extern void half_search(int *array, int val, int start, int end);
 
 extern void half_search_nr(int *array, int val, int start, int end);
 
+extern void find_array_min(int *array, int n);
+
+extern void find_array_min_max(int *array, int n);
+
+extern void randomized_select(int *array, int k, int start, int end);
+
+extern void full_sort(int *array, int start, int end);
+
+extern int is_swap(const int *array, int i, int j);
+
+extern void full_sort_nr(int *array, int start, int end);
+
+extern void insert_sort(int *array, int length);
+
+extern void merge(int *array, int p, int q, int r);
+
+extern void merge_sort(int *array, int p, int q);
+
+extern void quick_sort(int *array, int start, int end);
 
 //#undef N
 #endif
