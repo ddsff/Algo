@@ -42,6 +42,7 @@ extern void matrix_multi(int n, int a[64][64], int b[64][64], int c[64][64]);
 extern void strassen(int n, int a[64][64], int b[64][64], int c[64][64]);
 
 extern void quick_sort(int* array, int start, int end);
+
 extern void find_array_min(int* array, int n);
 extern void find_array_min_max(int* array, int n);
 extern void randomized_select(int* array, int k, int start, int end);
