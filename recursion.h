@@ -54,5 +54,11 @@ extern void merge_sort(int *array, int p, int q);
 
 extern void quick_sort(int *array, int start, int end);
 
+extern void quick_sort_1(int* array, int start, int end);
+
+extern void quick_sort_2(int* array, int start, int end);
+
+extern void quick_sort_3(int* array, int start, int end);
+
 //#undef N
 #endif

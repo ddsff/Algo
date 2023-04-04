@@ -422,24 +422,6 @@ void merge_sort(int *array, int p, int q) {
     }
 }
 
-void quick_sort(int *array, int start, int end) {
-    if (start >= end) return;
-    int key = array[start];
-    int i = start, j = end;
-    while (i < j) {
-        if (key <= array[j]) {
-            j--;
-        }
-        swap(array, i, j);
-        if (key >= array[i]) {
-            i++;
-        }
-        swap(array, i, j);
-    }
-    quick_sort(array, start, i - 1);
-    quick_sort(array, i + 1, end);
-}
-
 int one_dimension_nearst_distance(int *array, int start, int end) {
 
     int left, right, min;
@@ -452,3 +434,79 @@ int one_dimension_nearst_distance(int *array, int start, int end) {
     min = ((array[mid + 1] - array[mid]) > min) ? min : array[mid + 1] - array[mid];
     return min;
 }
+
+void quick_sort(int *array, int start, int end) {
+    if (start >= end) return;
+    int key = array[start];
+    int i = start, j = end;
+    while (i < j) {
+        while (key <= array[j] && i < j) {
+            j--;
+        }
+        swap(array, i, j);
+        while (key >= array[i] && i < j) {
+            i++;
+        }
+        swap(array, i, j);
+    }
+    quick_sort(array, start, i - 1);
+    quick_sort(array, i + 1, end);
+}
+
+void quick_sort_1(int* array, int start, int end) {
+
+    int key = array[start];
+    int i = start, j = end;
+    if (start >= end) return;
+    while(i < j) {
+        while (i < j && key <= array[j])
+            j--;
+        while (i < j && key >= array[i])
+            i++;
+        swap(array, i, j);
+    }
+    swap(array, start, i);
+    quick_sort_1(array, start, i - 1);
+    quick_sort_1(array, i + 1, end);
+}
+
+void quick_sort_2(int* array, int start, int end) {
+
+    int key = array[start];
+    int key_idx = start;
+    if (start >= end) return;
+    int i = start, j = end;
+    while (i < j) {
+        while (i < j && key <= array[j])
+            j--;
+        array[key_idx] = array[j];
+        key_idx = j;
+        while (i < j && key >= array[i])
+            i++;
+        array[key_idx] = array[i];
+        key_idx = i;
+    }
+    array[key_idx] = key;
+    quick_sort_2(array, start, key_idx - 1);
+    quick_sort_2(array, key_idx + 1, end);
+}
+
+void quick_sort_3(int* array, int start, int end) {
+    
+    int key = array[start];
+    if (start >= end) return;
+    int slow = start, fast = start;
+    while(fast < end) {
+        if (array[++fast] < key) {
+            swap(array, ++slow, fast);
+        }
+    }
+    swap(array, start, slow);
+    quick_sort_3(array, start, slow - 1);
+    quick_sort_3(array, slow + 1, end);
+}
+
+
+
+
+

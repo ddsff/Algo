@@ -7,4 +7,6 @@
 
 extern void swap(int *array, int i, int j);
 
+extern void printf_array(int* array, int n);
+
 #endif //CLION_MY_LIB_H

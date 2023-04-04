@@ -11,3 +11,11 @@ void swap(int *array, int i, int j) {
         array[i] = array[i] ^ array[j];
     }
 }
+
+void printf_array(int* array, int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
