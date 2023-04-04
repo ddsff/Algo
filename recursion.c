@@ -1,5 +1,6 @@
 #include "recursion.h"
 
+#define N  64
 static order = 0;
 
 void chessboard(int matrix[N][N], int length, int row, int column) {
