@@ -13,5 +13,6 @@
 #include "my_lib.h"
 #include "recursion.h"
 #include "leetcode.h"
+#include "chapter2.h"
 
 #endif //CLION_MAIN_H

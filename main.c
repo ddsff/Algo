@@ -27,7 +27,8 @@ int main() {
     //full_sort(d, 0, 5);
     //full_sort_nr(d, 0, 5);
     //nextPermutation(d, 6);
-    insert_sort(a, 11);
+    //insert_sort(a, 11);
+    select_sort(a, 11);
     printf_array(a, 11);
     printf("Hello, World!\n");
     getchar();
