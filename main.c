@@ -28,9 +28,10 @@ int main() {
     //full_sort_nr(d, 0, 5);
     //nextPermutation(d, 6);
     //insert_sort(a, 11);
-    select_sort(a, 11);
-    printf_array(a, 11);
-    printf("Hello, World!\n");
+    //select_sort(a, 11);
+    //printf_array(a, 11);
+    //printf("Hello, World!\n");
+    stag_bitmap();
     getchar();
     return 0;
 }

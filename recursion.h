@@ -60,5 +60,6 @@ extern void quick_sort_2(int* array, int start, int end);
 
 extern void quick_sort_3(int* array, int start, int end);
 
+void stag_bitmap();
 //#undef N
 #endif

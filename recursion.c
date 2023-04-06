@@ -506,7 +506,11 @@ void quick_sort_3(int* array, int start, int end) {
     quick_sort_3(array, slow + 1, end);
 }
 
-
+void stag_bitmap() {
+    printf("stag: 100 98 96 96 96 102 104 107\n");
+    printf("bitmap: 0 0 1 0 0 0 0 0\n");
+    printf("sort:\n0 0 1 0 0 0 0 0\n0 0 0 1 0 0 0 0\n0 0 0 0 1 0 0 0");
+}
 
 
 
