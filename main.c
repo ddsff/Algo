@@ -8,6 +8,8 @@ int main() {
     int b[] = {3, 2, 1};
     int c[] = { 4, 1, 6, 5, 7, 2, 3 };
     int d[] = {5, 4, 7, 5, 3, 2};
+    int stag[] = { 100, 98, 96, 96, 96, 102, 104, 107 };
+    int bitmap[] = { 0, 0, 1,  0, 0, 0, 0, 0 };
     //move(1, 2, 3, 16);
     //full_sort(a, 0, 5);
     //full_sort_nr(a, 0 , 5);
@@ -30,8 +32,8 @@ int main() {
     //insert_sort(a, 11);
     //select_sort(a, 11);
     //printf_array(a, 11);
-    //printf("Hello, World!\n");
-    stag_bitmap();
+    stag_bitmap(stag, bitmap, 8);
+    printf("Hello, World!\n");
     getchar();
     return 0;
 }

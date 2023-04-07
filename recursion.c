@@ -506,11 +506,38 @@ void quick_sort_3(int* array, int start, int end) {
     quick_sort_3(array, slow + 1, end);
 }
 
-void stag_bitmap() {
-    printf("stag: 100 98 96 96 96 102 104 107\n");
-    printf("bitmap: 0 0 1 0 0 0 0 0\n");
-    printf("sort:\n0 0 1 0 0 0 0 0\n0 0 0 1 0 0 0 0\n0 0 0 0 1 0 0 0");
+void stag_bitmap(int* stag, int * bitmap, int length) {
+
+    int find = 0, i = 0, idx = 0, cnt = 0;
+    int array[N];
+
+    for (int j = 0; j < N; j++) {
+        array[j] = 0;
+    }
+    while (i < length - 1) {
+        if (stag[i] == stag[i + 1] && find == 0) {
+            find = 1;
+            array[idx++] = i;
+        }
+        if (stag[i] != stag[i + 1] && find == 1) {
+            find = 0;
+            array[idx] = i;
+            cnt++;
+        }
+        i++;
+    }
+    for (size_t j = 0; j < cnt * 2; j++)
+    {
+        printf("%d ", array[j]);
+    }
+    stag_bitmap_sort(bitmap, array, cnt * 2);
 }
 
+void stag_bitmap_sort(int* bitmap, int* array, int cnt) {
 
+    
+    
+
+
+}
 
